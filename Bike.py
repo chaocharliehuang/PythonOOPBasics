@@ -5,8 +5,6 @@ class Bike(object):
         self.miles = 0
 
     def displayInfo(self):
-        if self.miles < 0:
-            self.miles = 0
         print 'Price: $' + str(self.price)
         print 'Max Speed: ' + self.max_speed
         print 'Miles: ' + str(self.miles)
@@ -19,6 +17,8 @@ class Bike(object):
     def reverse(self):
         print 'Reversing'
         self.miles -= 5
+        if self.miles < 0:
+            self.miles = 0
         return self
 
 bike1 = Bike(200, '25mph')
